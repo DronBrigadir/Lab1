@@ -8,10 +8,18 @@ namespace Lab1
 {
     class Program
     {
-        static public int Discr(List<int>coef){ ///find discriminant
+        /// <summary>
+        /// Find discriminant
+        /// </summary>
+        /// <returns>discriminant</returns>
+        static public int Discr(List<int>coef){
             return coef[1] * coef[1] - 4 * coef[0] * coef[2];
         }
-        static public int Coef(){ ///enter coefficient
+        /// <summary>
+        /// Enter coefficients
+        /// </summary>
+        /// <returns>Coefficients List</returns>
+        static public int Coef(){
             string bufCoefficient;
             int coefficient;
             bool checkCorrectInput = true;
@@ -23,6 +31,11 @@ namespace Lab1
             } while (!checkCorrectInput);
             return coefficient;
         }
+        /// <summary>
+        /// Solve equation
+        /// </summary>
+        /// <param name="coef">equation coefficients</param>
+        /// <returns>Roots of equation</returns>
         static public List<double> SolveEquation(List<int> coef){
             int discriminant = Discr(coef);
             List<double> result = new List<double>();
@@ -45,8 +58,6 @@ namespace Lab1
             return result;
         }
         static void Main(string[] args){
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
             List<int> coefficients = new List<int>();
             for (int i = 0; i < 3; i++) {
                 coefficients.Add(Coef());
