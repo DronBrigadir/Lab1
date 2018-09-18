@@ -44,15 +44,15 @@ namespace Lab1
             }
             return result;
         }
-        static void Main(string[] args)
-        {
+        static void Main(string[] args){
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
             List<int> coefficients = new List<int>();
             for (int i = 0; i < 3; i++) {
-                coefficients[i] = Coef();
+                coefficients.Add(Coef());
             }
             int discriminant = Discr(coefficients);
             SolveEquation(coefficients);
-            }
         }
     }
 }
